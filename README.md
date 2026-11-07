@@ -1,6 +1,4 @@
-# Jogo-da-forca
-Modulo 5 - projeto
- # Jogo da Forca em Python 🪓
+# Jogo da Forca em Python 🪓
 
 ## Descrição do Projeto
 Este projeto consiste numa implementação em linha de comandos (CLI) do clássico **Jogo da Forca**, desenvolvido no âmbito do Módulo 5 (Projeto de Programação) do curso de Programação em Python da Sabius / 2B Centro de Estudos.
@@ -15,4 +13,3 @@ Este projeto consiste numa implementação em linha de comandos (CLI) do clássi
 2. Execute o ficheiro principal com o comando:
    ```bash
    python main.py
-
