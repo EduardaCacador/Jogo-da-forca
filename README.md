@@ -1,52 +1,23 @@
 # Jogo-da-forca
 Modulo 5 - projeto
 
-def jogo_da_forca():
-    # Definição do problema / Regras iniciais
-    palavra_secreta = "python"
-    letras_certas = set()
-    tentativas_maximas = 6
-    erros = 0
+# Jogo da Forca em Python 🪓
 
-    print("=== JOGO DA FORCA ===")
-    print("Objetivo: Adivinhar a palavra secreta letra a letra.")
-    print(f"Tentativas máximas permitidas: {tentativas_maximas}\n")
+## Descrição do Projeto
+Este projeto consiste numa implementação em linha de comandos (CLI) do clássico **Jogo da Forca**, desenvolvido no âmbito do Módulo 5 (Projeto de Programação) do curso de Programação em Python da Sabius / 2B Centro de Estudos. O objetivo é permitir ao utilizador adivinhar uma palavra secreta letra a letra antes de esgotar o limite máximo de tentativas.
 
-    # Ciclo principal do jogo
-    while erros < tentativas_maximas:
-        # Mostrar o estado atual da palavra (ex: p _ t h _ n)
-        palavra_progresso = "".join([letra if letra in letras_certas else "_" for letra in palavra_secreta])
-        print(f"\nPalavra: {palavra_progresso}")
-        print(f"Erros: {erros}/{tentativas_maximas}")
+## Regras do Jogo
+* O jogador tem um limite máximo de **6 tentativas falhadas**.
+* Cada jogada consiste na introdução de uma única letra.
+* Letras repetidas ou inputs inválidos (números, caracteres especiais ou palavras inteiras) são validados pelo sistema sem consumir tentativas válidas.
+* O jogo termina com **Vitória** se todas as letras da palavra forem descobertas, ou com **Derrota** se as 6 tentativas forem esgotadas.
 
-        # Condição de vitória
-        if palavra_progresso == palavra_secreta:
-            print("\n Parabéns! Ganhou o jogo, adivinhou a palavra secreta!")
-            break
+## Requisitos do Sistema
+* Python 3.x instalado no sistema operativo (Windows, macOS ou Linux).
 
-        # Pedir input ao utilizador
-        tentativa = input("Introduza uma letra: ").lower()
-
-        # Validação simples do input
-        if len(tentativa) != 1 or not tentativa.isalpha():
-            print("Por favor, introduza apenas uma letra válida.")
-            continue
-
-        if tentativa in letras_certas or tentativa in [l for l in palavra_secreta if l not in letras_certas]:
-            # Nota: para simplificar, verificamos se já foi usada
-            pass
-
-        if tentativa in palavra_secreta:
-            print(f"Boa! A letra '{tentativa}' faz parte da palavra.")
-            letras_certas.add(tentativa)
-        else:
-            print(f"A letra '{tentativa}' não está na palavra.")
-            erros += 1
-
-    # Condição de derrota
-    if erros == tentativas_maximas:
-        print(f"\n Perdeu o jogo! Esgotou as {tentativas_maximas} tentativas. A palavra era: {palavra_secreta}")
-
-# Executar o jogo
-if __name__ == "__main__":
-    jogo_da_forca()
+## Instruções de Execução
+1. Clone este repositório ou transfira os ficheiros para o seu computador.
+2. Abra o terminal (ou linha de comandos) na pasta onde se encontram os ficheiros.
+3. Execute o ficheiro principal com o seguinte comando:
+   ```bash
+   python main.py
